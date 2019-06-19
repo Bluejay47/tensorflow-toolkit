@@ -1,0 +1,17 @@
+version: '3.5'
+
+services:
+  tf:
+    image: 'tensorflow/tensorflow:toolkit'
+    container_name: ${NAME}
+    ports:
+      - ${PORT}:8888
+    volumes:
+      - ${HOST_DIR}:/tf
+    networks:
+      - ${NETWORK}
+    user: ${UID}:${GID}
+
+networks:
+  ml-network:
+   name: ${NETWORK}
