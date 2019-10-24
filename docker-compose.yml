@@ -1,13 +1,19 @@
-version: '3.5'
+version: '3.7'
 
 services:
   tf:
-    image: 'tensorflow/tensorflow:toolkit'
+    image: 'tensorflow/tf-toolkit'
     container_name: ${NAME}
     ports:
       - ${PORT}:8888
     volumes:
       - ${HOST_DIR}:/tf
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+    devices:
+      - /dev/nvidia0
     networks:
       - ${NETWORK}
     user: ${UID}:${GID}

@@ -25,3 +25,4 @@ pyenv
 Vagrantfile
 *.ipynb_checkpoints
 .env
+build.sh
