@@ -1,6 +1,6 @@
 
-# tensorflow/2.0.0-gpu-py3-jupyter
-# 1.0.1
+# tensorflow/latest-gpu-py3-jupyter
+# 1.0.2
 
 FROM tensorflow/tensorflow:latest-gpu-py3-jupyter
 LABEL maintainer="Jerry Gamble <contact@jerrygamble.com>"
