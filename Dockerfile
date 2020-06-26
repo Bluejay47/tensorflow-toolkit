@@ -2,9 +2,9 @@
 # tensorflow/2.0.0-gpu-py3-jupyter
 # 1.0.1
 
-FROM tensorflow/tensorflow:2.0.0-gpu-py3-jupyter
+FROM tensorflow/tensorflow:latest-gpu-py3-jupyter
 LABEL maintainer="Jerry Gamble <contact@jerrygamble.com>"
-LABEL version="1.01"
+LABEL version="1.02"
 LABEL description="tensorflow/tensorflow:2.0.0-gpu-py3-jupyter image with scikit-learn, pandas, scipy, matplotlib, and opencv-python."
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -21,6 +21,7 @@ RUN apt-get install -yq python3-opencv
 
 RUN pip3 install scikit-learn && \
     pip3 install scipy && \
+    pip3 install jupyterlab && \
     pip3 install pandas && \
     pip3 install matplotlib
 
